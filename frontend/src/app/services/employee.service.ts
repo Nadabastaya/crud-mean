@@ -7,10 +7,12 @@ import { Employee } from '../models/employee';
 })
 export class EmployeeService {
   readonly URL_API = "http://localhost:3000/api/employees";
+  employees: Employee[];
+  selectedEmployee: Employee;
 
-  selectedEmplotee: Employee;
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.selectedEmployee
+   }
 
   getEmployee() {
     return this.http.get(this.URL_API);
